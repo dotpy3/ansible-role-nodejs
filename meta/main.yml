@@ -1,0 +1,17 @@
+---
+
+galaxy_info:
+  author: dotpy3
+  description: Node.js installation for Debian
+  license: "license (BSD, MIT)"
+  min_ansible_version: 1.9
+  platforms:
+    - name: Debian
+      versions:
+      - all
+    - name: Ubuntu
+      versions:
+      - all
+  galaxy_tags:
+    - development
+    - web

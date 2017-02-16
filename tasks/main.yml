@@ -1,0 +1,12 @@
+---
+- name: Downloading NodeJS archive
+  get_url:
+    src: https://nodejs.org/dist/v{{ nodejs_version }}/node-v{{ nodejs_version }}-linux-{{ architecture }}.tar.xz
+    dest: node.tar.xz
+- name: Extracting NodeJS and npm
+  command: tar -xvJf node.tar.xz
+- name: Moving the binaries to the global scope
+  command: (mv node /usr/bin) && (mv npm /usr/bin)
+  become: yes
+- name: Updating npm
+  command: npm install -g npm

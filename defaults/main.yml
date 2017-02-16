@@ -1,0 +1,8 @@
+---
+
+# Set the NodeJS version to install.
+nodejs_version: "6.9.5"
+
+# Set the architecture of the binary to download.
+# Possible values: "x86", "x64" (default), "armv6l", "armv7l", "arm64".
+architecture: "x64"
