@@ -3,10 +3,13 @@
   get_url:
     url: https://nodejs.org/dist/v{{ nodejs_version }}/node-v{{ nodejs_version }}-linux-{{ architecture }}.tar.xz
     dest: node.tar.xz
+  become: yes
 - name: Extracting NodeJS and npm
-  command: tar -xvJf node.tar.xz
+  command: tar -xvJf node.tar.xz -C node
+  become: yes
 - name: Moving the binaries to the global scope
-  command: (mv node /usr/bin) && (mv npm /usr/bin)
+  command: (mv node/bin/node /usr/bin) && (mv node/bin/npm /usr/bin)
   become: yes
 - name: Updating npm
   command: npm install -g npm
+  become: yes
