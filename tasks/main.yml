@@ -1,7 +1,7 @@
 ---
 - name: Downloading NodeJS archive
   get_url:
-    src: https://nodejs.org/dist/v{{ nodejs_version }}/node-v{{ nodejs_version }}-linux-{{ architecture }}.tar.xz
+    url: https://nodejs.org/dist/v{{ nodejs_version }}/node-v{{ nodejs_version }}-linux-{{ architecture }}.tar.xz
     dest: node.tar.xz
 - name: Extracting NodeJS and npm
   command: tar -xvJf node.tar.xz
